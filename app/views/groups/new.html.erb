@@ -1,0 +1,20 @@
+<h1>グループ作成</h1>
+
+<%= form_with model: @group do |f| %>
+
+  <div>
+    <%= f.label :name %></br>
+    <%= f.text_field :name, class:"form_name", autofoucs: true, autocomplete: "name", placeholder: "グループ名を記入してください" %>
+  </div>
+
+  <div>
+    <%= f.collection_check_boxes(:user_ids, User.all, :id, :nickname) do |b| %>
+      <%= b.label { b.check_box + b.text } %>
+    <% end %>
+  </div>
+
+  <div class="action">
+    <%= f.submit "登録" %>
+  </div>
+
+<% end %>
