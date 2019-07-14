@@ -1,0 +1,37 @@
+<%= link_to "ログイン", new_user_session_path %>
+<%= link_to "新規登録", new_user_registration_path %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+<div class="row profile">
+  <div class="col-lg-8 col-md-10 mx-auto">
+    <h2>プロフィール</h2>
+    <table>
+      <thead>
+        <tr><%= "ニックネーム：" + @user.nickname  %></tr><br>
+        <tr><%= "メールアドレス：" + @user.email  %></tr>
+      </thead>
+    </table>
+    <%= link_to "グループ作成", new_group_path, class: "btn btn-warning" %>
+  </div>
+</div>
+
+<h2>カレンダー</h2>
+<div class="row calendar">
+  <% current_user.groups.each do |group| %>
+  <%# <% binding.pry() %>
+    <div class="col-xl-3">
+        <table>
+          <tbody>
+            <tr>
+              <td><%= link_to group.name, group_path(group.id) %></td>
+            </tr>
+            <tr>
+              <% group.users.each do |user| %>
+                <td><%= user.nickname %></td>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  <% end %>
+</div>
