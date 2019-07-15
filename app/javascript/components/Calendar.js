@@ -1,4 +1,5 @@
 import React from "react"
+import Youbi from "./Week"
 // import PropTypes from "prop-types"
 
 class Calendar extends React.Component {
@@ -8,9 +9,9 @@ class Calendar extends React.Component {
         <div className="member">メンバー</div>
         <div className="ym">年月セレクト</div>
         <div className="calendar">
-          <div className="calendar-week">曜日</div>
-          <div className="calendar-main">
-            <div className="calendar-cell">日</div>
+          <Youbi />
+          <div className="cal-main">
+            <div className="cal-day">日</div>
           </div>
         </div>
       </React.Fragment>
