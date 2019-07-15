@@ -1,0 +1,29 @@
+div.calendar{
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  width: 492px;
+  height: 420px;
+  div.cal-week{
+    background-color: aquamarine;
+    div.cal-date{
+      width: 70px;
+      height: 24px;
+      border-right: 1px solid #cccccc; 
+      border-top: 1px solid #cccccc;
+      border-bottom:  1px solid #cccccc;
+      float: left;
+      text-align: center;
+    }
+  }
+  div.cal-main{
+    background-color: bisque;
+    div.cal-day {
+      width: 70px;
+      height: 70px;
+      border-right: 1px solid #cccccc;
+      border-bottom:  1px solid #cccccc;
+      float: left;
+      background-color: #cdd0d2;
+    }
+  }  
+}
