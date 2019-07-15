@@ -1,5 +1,5 @@
 import React from "react"
-import Youbi from "./Week"
+import Youbi from "./Youbi"
 // import PropTypes from "prop-types"
 
 class Calendar extends React.Component {
