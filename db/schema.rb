@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_063514) do
     t.bigint "user_id"
     t.bigint "group_id"
     t.date "task_date"
-    t.time "taks_start"
+    t.time "task_start"
     t.time "task_end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
