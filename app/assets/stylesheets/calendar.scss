@@ -4,8 +4,7 @@ div.calendar{
   width: 707px;
   height: 624px;
   div.cal-week{
-    div.cal-y{
-      background-color: aquamarine;
+    div.cal-youbi{
       width: 100px;
       height: 24px;
       border-right: 1px solid #cccccc; 
@@ -13,6 +12,12 @@ div.calendar{
       border-bottom:  1px solid #cccccc;
       float: left;
       text-align: center;
+      &.sun{
+        color: red;
+      }
+      &.sat{
+        color: blue;
+      }
     }
   }
   // div.cal-main{
@@ -23,9 +28,10 @@ div.calendar{
       border-right: 1px solid #cccccc;
       border-bottom:  1px solid #cccccc;
       float: left;
-      background-color: #cdd0d2;
-      div.disabled{
-        color: blueviolet;
+
+      &.disabled{
+        color: black;
+        background-color: #b3abab;
       }
     }
   // }  
