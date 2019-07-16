@@ -5,7 +5,13 @@ const Youbi = () => {
   let youbi = []
 
   for ( let i=0 ; i<week.length; i++ ){
-    youbi.push(<div className="cal-y">{week[i]}</div>)
+    if ( i == 0 ) {
+      youbi.push(<div className="cal-youbi sun">{week[i]}</div>)
+    } else if ( i == 6 ) {
+      youbi.push(<div className="cal-youbi sat">{week[i]}</div>)
+    } else {
+      youbi.push(<div className="cal-youbi">{week[i]}</div>)
+    }
   }
 
   return(

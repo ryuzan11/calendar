@@ -19,13 +19,16 @@ const CellDay = (year, month) => {
   for ( let d=0 ; d<42 ; d++ ){
         if ( d<startDay ) {
           let prevDay = prevMonthEndDay - startDay + d + 1
-          cellDay.push(<div className="cal-cell" value={d}><div className="cell disabled">{prevDay}</div></div>)
+          let ymd = year + "-" + (month-1) + "-" + prevDay
+          cellDay.push(<div className="cal-cell disabled" id={ymd}><div>{prevDay}</div></div>)
         } else if ( dayCount>endDay ) {
           let nextDay = dayCount - endDay
-          cellDay.push(<div className="cal-cell" value={d}><div className="cell disabled">{nextDay}</div></div>)
+          let ymd = year + "-" + (month+1) + "-" + nextDay
+          cellDay.push(<div className="cal-cell disabled" id={ymd}><div>{nextDay}</div></div>)
           dayCount++
         }else {
-          cellDay.push(<div className="cal-cell" value={d}><div>{dayCount}</div></div>)
+          let ymd = year + "-" + month + "-" + dayCount
+          cellDay.push(<div className="cal-cell" id={ymd}><div>{dayCount}</div></div>)
           dayCount++
         }
   }
