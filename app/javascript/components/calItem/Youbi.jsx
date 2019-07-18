@@ -6,11 +6,11 @@ const Youbi = () => {
 
   for ( let i=0 ; i<week.length; i++ ){
     if ( i == 0 ) {
-      youbi.push(<div className="cal-youbi sun">{week[i]}</div>)
+      youbi.push(<div className="cal-youbi sun" key={i.toString()}>{week[i]}</div>)
     } else if ( i == 6 ) {
-      youbi.push(<div className="cal-youbi sat">{week[i]}</div>)
+      youbi.push(<div className="cal-youbi sat" key={i.toString()}>{week[i]}</div>)
     } else {
-      youbi.push(<div className="cal-youbi">{week[i]}</div>)
+      youbi.push(<div className="cal-youbi" key={i.toString()}>{week[i]}</div>)
     }
   }
 
