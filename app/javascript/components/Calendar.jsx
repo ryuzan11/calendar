@@ -1,24 +1,17 @@
 import React from "react"
-import Youbi from "./Youbi"
-import CellDay from "./CellDay"
-// import PropTypes from "prop-types"
+import Youbi from "./calItem/Youbi"
+import CellDay from "./calItem/CellDay"
 
 class Calendar extends React.Component {
   render () {
     const date = new Date();
     let year = date.getFullYear()
     let month = date.getMonth() + 1
-    
+
     return (
       <React.Fragment>
-        <div className="member">メンバー</div>
-        {/* <div>
-          <button onClick={onClick(-1)}>{'前月'}</button>
-        </div> */}
+        {/* <div className="member">メンバー</div> */}
         <h4>{year}年{month}月</h4>
-        {/* <div>
-          <button onClick={onClick(1)}>{'次月'}</button>
-        </div> */}
         <div className="calendar">
           <Youbi />
           {CellDay(year, month)}
@@ -27,9 +20,5 @@ class Calendar extends React.Component {
     );
   }
 }
-
-// Calendar.propTypes = {
-//   calendar: PropTypes.string
-// };
 
 export default Calendar
