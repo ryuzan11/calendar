@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_063514) do
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "task"
+    t.string "title"
     t.bigint "user_id"
     t.bigint "group_id"
     t.date "task_date"
