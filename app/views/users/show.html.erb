@@ -1,6 +1,6 @@
-<%= link_to "ログイン", new_user_session_path %>
 <%= link_to "新規登録", new_user_registration_path %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete  %>
+<%= link_to "MYページ", user_path(current_user) %>
 
 <div class="row profile">
   <div class="col-lg-8 col-md-10 mx-auto">
@@ -11,23 +11,25 @@
         <tr><%= "メールアドレス：" + @user.email  %></tr>
       </thead>
     </table>
-    <%= link_to "グループ作成", new_group_path, class: "btn btn-warning" %>
+    <% if current_user.id == @user.id %>
+      <%= link_to "グループ作成", new_group_path, class: "btn btn-warning" %>
+    <% else %>
+    <% end %>
   </div>
 </div>
 
 <h2>カレンダー</h2>
-<div class="row calendar">
-  <% current_user.groups.each do |group| %>
-  <%# <% binding.pry() %>
+<div class="row usercalendar">
+  <% @user.groups.each do |group| %>
     <div class="col-xl-3">
         <table>
           <tbody>
             <tr>
-              <td><%= link_to group.name, group_path(group.id) %></td>
+              <td><%= link_to group.name, group_tasks_path(group.id) %></td>
             </tr>
             <tr>
               <% group.users.each do |user| %>
-                <td><%= user.nickname %></td>
+                <td><%= link_to user.nickname, user_path(user.id) %></td>
               <% end %>
             </tr>
           </tbody>
