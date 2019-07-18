@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'groups#show'
+  root 'users#index'
 
   devise_for :users
 
@@ -7,10 +7,12 @@ Rails.application.routes.draw do
     get 'login' => 'devise/sessions#new'
     get 'sign_up' => 'devise/registrations#new'
     get 'edit' => 'devise/registrations#edit'
-    delete 'logout' => 'devise/sessions#destroy'
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :users, only: [:show, :edit, :update]
-  resources :groups, only: [:show, :new, :create, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
+  resources :groups, only: [:index, :new, :create, :edit, :update] do
+    resources :tasks, only: [:index, :create, :update, :destroy ]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
