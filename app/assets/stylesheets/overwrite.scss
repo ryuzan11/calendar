@@ -1,7 +1,18 @@
-.row.calendar {
+.row.usercalendar {
   .col-xl-3{
     background-color: beige;
     border: 1px solid black;
     margin: 1px;
+    height: 100px;
   }
+}
+
+.col-xl-7.cal{
+  background-color: beige;  
+  border-left:  1px solid black;
+  border-right:  1px solid black;
+}
+
+p.example{
+  background-color: bisque;
 }
