@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   before_action :group_info, :user_info
 
   def index
+    # binding.pry
     # @task = Task.new
     @tasks = Task.where(group_id: params[:group_id])
     respond_to do |format|
@@ -12,9 +13,11 @@ class TasksController < ApplicationController
   end
 
   def create
+    # binding.pry()
     @task = Task.new(task_params)
     if @task.save
-      render json: @task, status: :created
+      @tasks = Task.where(group_id: params[:group_id])
+      render json: @tasks, status: :created
     else
       render json: @task.errors, status: :unprocessable_entity
     end 
