@@ -2,21 +2,21 @@ import React from "react"
 
   class TaskForm extends React.Component{
 
-  handleInputChange = (e) =>  {
-    const value = e.target.value;
-    const name = e.target.name;
-    let obj = {};
-    obj[name] = value;
-    // this.setState(obj);
-    this.props.onUserInput(obj)
-  };
+  // handleInputChange = (e) =>  {
+  //   const value = e.target.value;
+  //   const name = e.target.name;
+  //   let obj = {};
+  //   obj[name] = value;
+  //   // this.setState(obj);
+  //   this.props.onUserInput(obj)
+  // };
 
   handleSubmit(e) {
     e.preventDefault();
     let task = {
       task_date :e.target.task_date.value, 
-      comp :e.target.comp.value, 
       title :e.target.title.value,
+      // comp :e.target.comp.value, 
       // task_start :e.target.task_start.value,
       // task_end :e.target.task_end.value,
       user_id :e.target.user_id.value
@@ -24,16 +24,15 @@ import React from "react"
     this.props.onFormSubmit(task);
     e.target.title.value = '';
     e.target.task_date.value = '';
-    e.target.comp.value = '';
+    // e.target.comp.value = '';
   };
 
   render(){
-    const taskAction =  "/groups/"+this.props.group.id+"/tasks"
     return(
       <div className="data-submit">
         <form 
         onSubmit={(e) => this.handleSubmit(e)} 
-        action={taskAction} 
+        // action={this.props.url} 
         >
           <label>
             日付
@@ -41,25 +40,25 @@ import React from "react"
               name="task_date"
               type="date"
               // value={this.props.task_date}
-              onChange={this.handleInputChange}
+              // onChange={this.handleInputChange}
                />
           </label><br />
-          達成
+          {/* 達成
           <label>
             <input
               name="comp"
               type="checkbox"
-              // value={this.props.comp}
+              value={this.props.comp}
               onChange={this.handleInputChange} />
-          </label><br />
+          </label><br /> */}
           <label>
-            　
+            タスク
             <textarea
               name="title"
               rows="1"
               placeholder="タスク記入"
               // value={this.props.title}
-              onChange={this.handleInputChange}
+              // onChange={this.handleInputChange}
             />
           </label><br />
           {/* <label>

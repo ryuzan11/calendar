@@ -3,9 +3,9 @@ import Task from "./Task";
 
 class Tasks extends React.Component{
   render(){
+    console.log(this.props.tasks)
     return(
       <React.Fragment>
-      <div className="hyogi">タスクを表示(非同期未実装)</div>
       <div className="tasks">
         {this.props.tasks.map(function(task){
           return (
@@ -13,6 +13,9 @@ class Tasks extends React.Component{
           )
         })}
       </div>
+      {/* <div className="tasks">
+        <Task task={this.props.task} key={task.id} />
+      </div> */}
       </React.Fragment>
     )
   }
