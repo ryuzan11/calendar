@@ -6,8 +6,6 @@ class MyTask extends React.Component {1
   constructor(props) {
     super(props);
     this.state = {
-      // tasks: [this.props.tasks],
-      // tasks: [],
       tasks: this.props.tasks,
       url: "/groups/"+this.props.group.id+"/tasks",
       // task_date: '',
@@ -42,18 +40,14 @@ class MyTask extends React.Component {1
       <div className="my-task">
       <div className="mytask-title">MYタスク</div>
       <TaskForm
-        // task_date={this.state.task_date}
-        // title={this.state.title}
         group={this.props.group}
         user={this.props.user}
-        // url={this.state.url}
+        task_date={this.props.task_date}
         authenticity_token={this.props.authenticity_token}
-        onUserInput={this.handleUserInput}
+        // onUserInput={this.handleUserInput}
         onFormSubmit={this.handleFormSubmit}
       />
       <Tasks tasks={this.state.tasks} 
-      // task={this.state.addTask}
-      
       />
     </div>
     )
