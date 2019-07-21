@@ -1,5 +1,5 @@
 import React from "react";
-import MyTask from "./taskItem/MyTask";
+import MyTask from "./MyTask";
 
 class TaskBar extends React.Component {
   render(){
@@ -10,6 +10,7 @@ class TaskBar extends React.Component {
             tasks={this.props.tasks} 
             group={this.props.group} 
             user={this.props.user} 
+            task_date={this.props.task_date}
             authenticity_token={this.props.authenticity_token} 
           />
           <div className="other-task">

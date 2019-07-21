@@ -1,8 +1,13 @@
 import React from "react"
-import Youbi from "./calItem/Youbi"
-import CellDay from "./calItem/CellDay"
+import Youbi from "./Youbi"
+import CellDay from "./CellDay"
 
-class Calendar extends React.Component {
+class CalendarBar extends React.Component {
+
+  handleDateOutput = (click_date) =>{
+    this.props.onDateForm(click_date)
+  }
+
   render () {
     const date = new Date();
     let year = date.getFullYear()
@@ -14,11 +19,15 @@ class Calendar extends React.Component {
         <h4>{year}年{month}月</h4>
         <div className="calendar">
           <Youbi />
-          {CellDay(year, month)}
+          <CellDay 
+          year={year} 
+          month={month} 
+          onTaskDate={this.handleDateOutput}
+          />
         </div>
       </React.Fragment>
     );
   }
 }
 
-export default Calendar
+export default CalendarBar
