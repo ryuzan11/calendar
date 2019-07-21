@@ -3,7 +3,6 @@ import Task from "./Task";
 
 class Tasks extends React.Component{
   render(){
-    console.log(this.props.tasks)
     return(
       <React.Fragment>
       <div className="tasks">
@@ -13,9 +12,6 @@ class Tasks extends React.Component{
           )
         })}
       </div>
-      {/* <div className="tasks">
-        <Task task={this.props.task} key={task.id} />
-      </div> */}
       </React.Fragment>
     )
   }
