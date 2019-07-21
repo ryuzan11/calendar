@@ -11,7 +11,7 @@ import React from "react"
   //   this.props.onUserInput(obj)
   // };
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     let task = {
       task_date :e.target.task_date.value, 
@@ -23,8 +23,8 @@ import React from "react"
      }
     this.props.onFormSubmit(task);
     e.target.title.value = '';
-    e.target.task_date.value = '';
-    // e.target.comp.value = '';
+    // e.target.task_date.value = '';
+    this.setState({task_date: ''})
   };
 
   render(){
@@ -32,14 +32,13 @@ import React from "react"
       <div className="data-submit">
         <form 
         onSubmit={(e) => this.handleSubmit(e)} 
-        // action={this.props.url} 
         >
           <label>
             日付
             <input
               name="task_date"
               type="date"
-              // value={this.props.task_date}
+              value={this.props.task_date}
               // onChange={this.handleInputChange}
                />
           </label><br />
