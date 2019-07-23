@@ -4,7 +4,9 @@
     <%= render partial: "groups/side_user_bar"%>
   </div>
   <%= react_component("CalendarTask", 
-    props = {tasks: @tasks, group: @group, user: @user, authenticity_token: form_authenticity_token},
-    class: 'col-xl-10 calendar-task'
-    ) %>
+    props = {tasks: @tasks, 
+             group: @group, 
+             user: current_user, 
+             authenticity_token: form_authenticity_token},
+    class: 'col-xl-10 calendar-task') %>
 </div>

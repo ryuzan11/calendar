@@ -1,6 +1,12 @@
 import React from "react"
 
   class TaskForm extends React.Component{
+    constructor(props){
+      super(props);
+      this.state = {
+        
+      }
+    }
 
   // handleInputChange = (e) =>  {
   //   const value = e.target.value;
@@ -24,7 +30,7 @@ import React from "react"
     this.props.onFormSubmit(task);
     e.target.title.value = '';
     // e.target.task_date.value = '';
-    this.setState({task_date: ''})
+    // this.setState({task_date: ''})
   };
 
   render(){

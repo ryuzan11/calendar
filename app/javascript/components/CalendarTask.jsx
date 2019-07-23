@@ -6,6 +6,7 @@ class CalendarTask extends React.Component{
   constructor(props){
     super(props);
     this.state = {
+      tasks: this.props.tasks,
       task_date: "",
       year: "",
       month: "",
@@ -17,6 +18,7 @@ class CalendarTask extends React.Component{
   let year = date.getFullYear()
   let month = date.getMonth() + 1
   this.setState({
+    task_date: date,
     year: year,
     month: month
     })
@@ -37,20 +39,35 @@ class CalendarTask extends React.Component{
     }
   }
 
-  handleInputPrevMonth = (prevMonth) => {
+  handlePrevCalendar = (prevMonth) => {
     let month = prevMonth
     this.moveCal(month)
     }
 
-  handleInputNextMonth = (nextMonth) => {
+  handleNextCalendar = (nextMonth) => {
     let month = nextMonth
     this.moveCal(month)
   }
 
-  handleDateInput = (click_date) => {
+  handleFormDate = (click_date) => {
     let task_date = click_date
     this.setState({task_date: task_date})
   }
+
+  handleFormSubmit = (task) => {
+    $.ajax({
+      url: this.state.url,
+      datatype: 'json',
+      type: 'POST',
+      data: task,
+      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
+      }).done(function(tasks){
+        this.setState({tasks: tasks})}.bind(this)
+        // this.state.tasks.push(tasks: task)}.bind(this)
+      ).fail(function(_xhr, status, err) {
+        console.error(this.state.url, status, err.toString())}.bind(this)
+      );
+    }
 
   render(){
     return(
@@ -59,21 +76,23 @@ class CalendarTask extends React.Component{
           <h2>カレンダー</h2>
           {/* {createCalendar()} */}
           <Calendar 
-            onDateForm={this.handleDateInput}
-            onInputPrev={this.handleInputPrevMonth}
-            onInputNext={this.handleInputNextMonth}
+            handlePrevCalendar={this.handlePrevCalendar}
+            handleNextCalendar={this.handleNextCalendar}
+            handleFormDate={this.handleFormDate}
             year={this.state.year}
             month={this.state.month}
+            tasks={this.state.tasks}
           />
         </div>
         <div className="task-bar">
           <h2>タスク登録</h2>
           <TaskBar 
-            tasks={this.props.tasks}
+            tasks={this.state.tasks}
             group={this.props.group}
             user={this.props.user}
             task_date={this.state.task_date}
             authenticity_token={this.props.authenticity_token} 
+            handleFormSubmit={this.handleFormSubmit}
           />
         </div>
       </React.Fragment>

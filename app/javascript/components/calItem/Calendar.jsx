@@ -12,18 +12,6 @@ class Calendar extends React.Component {
   //   }
   // }
 
-  handlePrevCalendar = (prevMonth) => {
-    this.props.onInputPrev(prevMonth)
-  }
-
-  handleNextCalendar = (nextMonth) => {
-    this.props.onInputNext(nextMonth)
-  }
-
-  handleDateOutput = (click_date) =>{
-    this.props.onDateForm(click_date)
-  }
-
   render () {
     return (
       <React.Fragment>
@@ -31,15 +19,16 @@ class Calendar extends React.Component {
         <YearMonth 
           year={this.props.year} 
           month={this.props.month} 
-          onPrevMonth={this.handlePrevCalendar}
-          onNextMonth={this.handleNextCalendar}
+          onPrevMonth={this.props.handlePrevCalendar}
+          onNextMonth={this.props.handleNextCalendar}
         />
         <div className="calendar">
           <Youbi />
           <CellDay 
             year={this.props.year} 
             month={this.props.month}
-            onTaskDate={this.handleDateOutput}
+            tasks={this.props.tasks}
+            onTaskDate={this.props.handleFormDate}
           />
         </div>
       </React.Fragment>

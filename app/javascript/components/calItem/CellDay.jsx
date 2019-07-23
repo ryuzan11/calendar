@@ -1,4 +1,5 @@
 import React from "react"
+import CellTask from "./CellTask"
 
 class CellDay extends React.Component{
 
@@ -31,6 +32,7 @@ class CellDay extends React.Component{
                   onClick={this.handleClickCell}
                 >
                 <div id={ymd} >{prevDay}</div>
+                <CellTask  ymd={ymd} tasks={this.props.tasks} />
             </div>)
           } else if ( dayCount>endDay ) {
             let nextDay = dayCount - endDay
@@ -44,6 +46,7 @@ class CellDay extends React.Component{
                 onClick={this.handleClickCell}
               >
                 <div id={ymd} >{nextDay}</div>
+                <CellTask  ymd={ymd} tasks={this.props.tasks} />
                 </div>)
             dayCount++
           }else {
@@ -56,15 +59,16 @@ class CellDay extends React.Component{
                   onClick={this.handleClickCell}
                 >
                 <div id={ymd} >{dayCount}</div>
+                <CellTask  ymd={ymd} tasks={this.props.tasks} />
               </div>)
             dayCount++
           }
     }
 
     return(
-      <div className="cal-main">
-        {cellDay}
-      </div>
+        <div className="cal-main">
+          {cellDay}
+        </div>
     )
   }
 };

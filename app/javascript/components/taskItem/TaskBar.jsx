@@ -12,6 +12,7 @@ class TaskBar extends React.Component {
             user={this.props.user} 
             task_date={this.props.task_date}
             authenticity_token={this.props.authenticity_token} 
+            handleFormSubmit={this.props.handleFormSubmit}
           />
           <div className="other-task">
             <h2>他ユーザー(未実装)</h2>

@@ -1,10 +1,8 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!
-  before_action :group_info, :user_info
+  before_action :authenticate_user!, :group_info
+  # befor_action :user_info
 
   def index
-    # binding.pry
-    # @task = Task.new
     @tasks = Task.where(group_id: params[:group_id])
     respond_to do |format|
       format.html
@@ -13,13 +11,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    # binding.pry()
     @task = Task.new(task_params)
     if @task.save
       @tasks = Task.where(group_id: params[:group_id])
       render json: @tasks, status: :created
     else
-      render json: @task.errors, status: :unprocessable_entity
+      render json: @task.errors, status: :unprocessable_entityｘ
     end 
   end
 
@@ -33,8 +30,8 @@ class TasksController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
-  def user_info
-    @user = User.find(current_user.id)
-  end
+  # def user_info
+  #   @user = User.find(current_user.id)
+  # end
 
 end
