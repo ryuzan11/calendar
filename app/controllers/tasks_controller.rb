@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   # befor_action :user_info
 
   def index
-    @tasks = Task.where(group_id: params[:group_id])
+    @tasks = Task.where(group_id: params[:group_id]).order('task_start ASC')
     respond_to do |format|
       format.html
       format.json { @new_task = @tasks.where('id > ?', params[:id]) }
