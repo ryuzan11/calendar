@@ -3,7 +3,7 @@ import React from "react";
 class Cell extends React.Component {
   render(){
     return(
-      <div className="task-cell" id="task.id">{this.props.task.title}</div>
+      <div className="task-cell" id={this.props.task.id}>{this.props.task.title}</div>
     )
   };
 };
