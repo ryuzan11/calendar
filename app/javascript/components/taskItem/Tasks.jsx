@@ -6,7 +6,7 @@ class Tasks extends React.Component{
     return(
       <React.Fragment>
       <div className="tasks">
-        {this.props.tasks.map(function(task){
+        {this.props.tasks.map( task => {
           return (
           <Task task={task} key={task.id} />
           )

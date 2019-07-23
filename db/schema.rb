@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_063514) do
+ActiveRecord::Schema.define(version: 2019_07_23_135900) do
 
   create_table "group_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 2019_07_16_063514) do
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.bigint "user_id"
     t.bigint "group_id"
-    t.date "task_date"
+    t.date "task_date", null: false
     t.time "task_start"
     t.time "task_end"
     t.datetime "created_at", null: false
