@@ -4,6 +4,15 @@
   background-color: beige;  
   border-left:  1px solid black;
   border-right:  1px solid black;
+  .year-month{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    .calendar-title{
+      font-size: 2rem;
+      vertical-align: middle;
+    }
+  }
   .calendar{
     background: white;
     border-bottom: 1px solid #cccccc;
