@@ -2,27 +2,30 @@ import React from "react"
 import Youbi from "./Youbi"
 import CellDay from "./CellDay"
 
-class CalendarBar extends React.Component {
+class Calendar extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      year: this.props.year,
+      month: this.props.month
+    }
+  }
 
   handleDateOutput = (click_date) =>{
     this.props.onDateForm(click_date)
   }
 
   render () {
-    const date = new Date();
-    let year = date.getFullYear()
-    let month = date.getMonth() + 1
-
     return (
       <React.Fragment>
         {/* <div className="member">メンバー</div> */}
-        <h4>{year}年{month}月</h4>
+        <h4>{this.state.year}年{this.state.month}月</h4>
         <div className="calendar">
           <Youbi />
           <CellDay 
-          year={year} 
-          month={month} 
-          onTaskDate={this.handleDateOutput}
+            year={this.state.year} 
+            month={this.state.month} 
+            onTaskDate={this.handleDateOutput}
           />
         </div>
       </React.Fragment>
@@ -30,4 +33,4 @@ class CalendarBar extends React.Component {
   }
 }
 
-export default CalendarBar
+export default Calendar
