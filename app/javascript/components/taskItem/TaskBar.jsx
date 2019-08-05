@@ -11,6 +11,7 @@ class TaskBar extends React.Component {
             group={this.props.group} 
             user={this.props.user} 
             task_date={this.props.task_date}
+            title={this.props.title}
             authenticity_token={this.props.authenticity_token} 
             handleFormSubmit={this.props.handleFormSubmit}
           />

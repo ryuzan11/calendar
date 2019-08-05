@@ -8,6 +8,7 @@ class CalendarTask extends React.Component{
     this.state = {
       tasks: this.props.tasks,
       task_date: "",
+      title:"",
       year: "",
       month: "",
     }
@@ -49,8 +50,8 @@ class CalendarTask extends React.Component{
     this.moveCal(month)
   }
 
-  handleFormDate = (click_date) => {
-    let task_date = click_date
+  handleFormDate = (click_day) => {
+    let task_date = click_day
     this.setState({task_date: task_date})
   }
 
@@ -66,8 +67,12 @@ class CalendarTask extends React.Component{
         // this.state.tasks.push(tasks: task)}.bind(this)
       ).fail(function(_xhr, status, err) {
         console.error(this.state.url, status, err.toString())}.bind(this)
-      );
-    }
+    );
+  }
+
+  handleTaskData = (click_task) => {
+
+  }
 
   render(){
     return(
@@ -91,6 +96,7 @@ class CalendarTask extends React.Component{
             group={this.props.group}
             user={this.props.user}
             task_date={this.state.task_date}
+            title={this.state.title}
             authenticity_token={this.props.authenticity_token} 
             handleFormSubmit={this.handleFormSubmit}
           />

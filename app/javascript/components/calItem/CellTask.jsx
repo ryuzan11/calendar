@@ -8,7 +8,7 @@ class CellTask extends React.Component {
     
     this.props.tasks.map( task => {
       if( ymd == task.task_date ){
-        length.push(<Cell task={task} key={task.id} />)
+        length.push(<Cell ymd={ymd} task={task} key={task.id} onTaskData={this.props.handleTaskData} />)
       }
     })
 

@@ -16,8 +16,15 @@ class TasksController < ApplicationController
       @tasks = Task.where(group_id: params[:group_id])
       render json: @tasks, status: :created
     else
-      render json: @task.errors, status: :unprocessable_entityｘ
-    end 
+      render json: @task.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.user_id == current_user.id
+      @task.update(task_params)
+    end
   end
 
   private

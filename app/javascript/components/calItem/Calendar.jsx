@@ -29,6 +29,7 @@ class Calendar extends React.Component {
             month={this.props.month}
             tasks={this.props.tasks}
             onTaskDate={this.props.handleFormDate}
+            handelTaskData={this.props.handelTaskData}
           />
         </div>
       </React.Fragment>
