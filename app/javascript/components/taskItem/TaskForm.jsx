@@ -61,7 +61,7 @@ import React from "react"
               name="title"
               rows="1"
               placeholder="タスク記入"
-              value={this.props.title}
+              // value={this.props.title}
               // onChange={this.handleInputChange}
             />
           </label><br />

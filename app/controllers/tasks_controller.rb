@@ -20,11 +20,14 @@ class TasksController < ApplicationController
     end
   end
 
-  def update
-    @task = Task.find(params[:id])
-    if @task.user_id == current_user.id
-      @task.update(task_params)
-    end
+  # def update
+  #   @task = Task.find(params[:id])
+  #   if @task.user_id == current_user.id
+  #     @task.update(task_params)
+  #   end
+  # end
+
+  def destroy
   end
 
   private

@@ -32,7 +32,11 @@ class CellDay extends React.Component{
                   onClick={this.handleClickCell}
                 >
                 <div id={ymd} >{prevDay}</div>
-                <CellTask  ymd={ymd} tasks={this.props.tasks} handelTaskData={this.props.handelTaskData} />
+                <CellTask  
+                  ymd={ymd} 
+                  tasks={this.props.tasks} 
+                  // handleTaskData={this.props.handleTaskData}
+                   />
             </div>)
           } else if ( dayCount>endDay ) {
             let nextDay = dayCount - endDay
@@ -46,7 +50,11 @@ class CellDay extends React.Component{
                 onClick={this.handleClickCell}
               >
                 <div id={ymd} >{nextDay}</div>
-                <CellTask  ymd={ymd} tasks={this.props.tasks} handelTaskData={this.props.handelTaskData} />
+                <CellTask  
+                  ymd={ymd} 
+                  tasks={this.props.tasks} 
+                  // handleTaskData={this.props.handleTaskData}
+                   />
                 </div>)
             dayCount++
           }else {
@@ -59,7 +67,11 @@ class CellDay extends React.Component{
                   onClick={this.handleClickCell}
                 >
                 <div id={ymd} >{dayCount}</div>
-                <CellTask  ymd={ymd} tasks={this.props.tasks} handelTaskData={this.props.handelTaskData} />
+                <CellTask  
+                  ymd={ymd} 
+                  tasks={this.props.tasks} 
+                  // handleTaskData={this.props.handleTaskData}
+                   />
               </div>)
             dayCount++
           }
