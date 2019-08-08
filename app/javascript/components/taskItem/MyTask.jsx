@@ -1,6 +1,6 @@
 import React from "react"
 import TaskForm from "./TaskForm"
-// import Tasks from "./Tasks"
+import Tasks from "./Tasks"
 
 class MyTask extends React.Component {
   // handleUserInput = (obj) => {
@@ -19,7 +19,7 @@ class MyTask extends React.Component {
         // onUserInput={this.handleUserInput}
         onFormSubmit={this.props.handleFormSubmit}
       />
-      {/* <Tasks tasks={this.props.tasks} /> */}
+      <Tasks tasks={this.props.tasks} task_date={this.props.task_date} />
     </div>
     )
   }

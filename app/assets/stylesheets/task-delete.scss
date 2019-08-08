@@ -1,12 +1,12 @@
-.modal-comment.is-animate {
+.modal.is-animate {
   opacity: 1;
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-.modal-comment.is-show {
+.modal.is-show {
   display: block;
 }
-.modal-comment {
+.modal {
   display: none;
   position: fixed;
   top: 0;

@@ -28,6 +28,9 @@ class TasksController < ApplicationController
   # end
 
   def destroy
+    task = Task.find(params[:id])
+    task.destroy
+    redirect_back(fallback_location: group_tasks_path(group_info[:id]))
   end
 
   private
