@@ -4,6 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.where(group_id: params[:group_id]).order('task_start ASC')
+    @groups = current_user.groups
     respond_to do |format|
       format.html
       format.json { @new_task = @tasks.where('id > ?', params[:id]) }

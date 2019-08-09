@@ -16,10 +16,12 @@ class YearMonth extends React.Component{
 render(){  
   return(
     <React.Fragment>
-      <div className="year-month">
-        <button type="button" className="btn btn-outline-primary" onClick={this.handleClickPrev}>前月</button>
-        <span className="calendar-title">{this.props.year}年{this.props.month}月</span>
-        <button type="button" className="btn btn-outline-primary" onClick={this.handleClickNext}>次月</button>
+      <div className="row">
+        <div className="year-month">
+          <button type="button" className="btn btn-outline-default" onClick={this.handleClickPrev}>前月</button>
+          <span className="calendar-title">{this.props.year}年{this.props.month}月</span>
+          <button type="button" className="btn btn-outline-default" onClick={this.handleClickNext}>次月</button>
+        </div>
       </div>
     </React.Fragment>
   )

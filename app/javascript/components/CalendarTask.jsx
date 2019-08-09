@@ -65,8 +65,9 @@ class CalendarTask extends React.Component{
   // }
 
   handleFormSubmit = (task) => {
+    let url = "/groups/" + this.props.group.id + "/tasks"
     $.ajax({
-      url: this.state.url,
+      url: url,
       datatype: 'json',
       type: 'POST',
       data: task,
@@ -82,30 +83,39 @@ class CalendarTask extends React.Component{
   render(){
     return(
       <React.Fragment>
-        <div className="calendar-bar">
-          <h2>カレンダー</h2>
-          {/* {createCalendar()} */}
-          <Calendar 
-            handlePrevCalendar={this.handlePrevCalendar}
-            handleNextCalendar={this.handleNextCalendar}
-            handleFormDate={this.handleFormDate}
-            // handleTaskData={this.handleTaskData}
-            year={this.state.year}
-            month={this.state.month}
-            tasks={this.state.tasks}
-          />
-        </div>
-        <div className="task-bar">
-          <h2>タスク登録</h2>
-          <TaskBar 
-            tasks={this.state.tasks}
-            group={this.props.group}
-            user={this.props.user}
-            task_date={this.state.task_date}
-            title={this.state.title}
-            authenticity_token={this.props.authenticity_token} 
-            handleFormSubmit={this.handleFormSubmit}
-          />
+        <div className="container-fluid box">
+          <div className="cards shadow mb-4" >
+            <div className="calendar-bar">
+              <div className="card-header py-3">
+                <h4 className="m-0 font-weight-bold text-primary">{ this.props.group.name }</h4>
+                {/* <div className="member">メンバー</div> */}
+              </div>
+              <div className="card-body">
+                <Calendar 
+                  handlePrevCalendar={this.handlePrevCalendar}
+                  handleNextCalendar={this.handleNextCalendar}
+                  handleFormDate={this.handleFormDate}
+                  // handleTaskData={this.handleTaskData}
+                  year={this.state.year}
+                  month={this.state.month}
+                  tasks={this.state.tasks}
+                />
+              </div>
+            </div>
+
+            <div className="task-bar">
+              <h2>タスク登録</h2>
+              <TaskBar 
+                tasks={this.state.tasks}
+                group={this.props.group}
+                user={this.props.user}
+                task_date={this.state.task_date}
+                title={this.state.title}
+                authenticity_token={this.props.authenticity_token} 
+                handleFormSubmit={this.handleFormSubmit}
+              />
+            </div>
+          </div>
         </div>
       </React.Fragment>
     )

@@ -1,0 +1,15 @@
+.jumbotron.my-4{
+  background: linear-gradient(to bottom, #{fade-out(#161616, .7)} 0%,#{fade-out(#161616, .3)} 75%,#161616 100%), url('../images/demo-image-01.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #EEEEEE;
+}
+
+div.member{
+  text-align: left !important;
+}
+
+.member-table{
+  width: 213px;
+}

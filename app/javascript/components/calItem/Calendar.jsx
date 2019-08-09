@@ -15,7 +15,6 @@ class Calendar extends React.Component {
   render () {
     return (
       <React.Fragment>
-        {/* <div className="member">メンバー</div> */}
         <YearMonth 
           year={this.props.year} 
           month={this.props.month} 
