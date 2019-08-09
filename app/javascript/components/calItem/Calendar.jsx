@@ -15,21 +15,25 @@ class Calendar extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <YearMonth 
-          year={this.props.year} 
-          month={this.props.month} 
-          onPrevMonth={this.props.handlePrevCalendar}
-          onNextMonth={this.props.handleNextCalendar}
-        />
-        <div className="calendar">
-          <Youbi />
-          <CellDay 
+        <div className="card-header">
+          <YearMonth 
             year={this.props.year} 
-            month={this.props.month}
-            tasks={this.props.tasks}
-            onTaskDate={this.props.handleFormDate}
-            // handleTaskData={this.props.handleTaskData}
+            month={this.props.month} 
+            onPrevMonth={this.props.handlePrevCalendar}
+            onNextMonth={this.props.handleNextCalendar}
           />
+        </div>
+        <div className="card-body">
+          <div className="calendar">
+            <Youbi />
+            <CellDay 
+              year={this.props.year} 
+              month={this.props.month}
+              tasks={this.props.tasks}
+              onTaskDate={this.props.handleFormDate}
+              // handleTaskData={this.props.handleTaskData}
+            />
+          </div>
         </div>
       </React.Fragment>
     );

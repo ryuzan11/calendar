@@ -84,23 +84,19 @@ class CalendarTask extends React.Component{
     return(
       <React.Fragment>
         <div className="container-fluid box">
+          <h1 className="h3 mb-2 text-gray-800">{ this.props.group.name }</h1>
+          {/* <div className="member">メンバー</div> */}
           <div className="cards shadow mb-4" >
             <div className="calendar-bar">
-              <div className="card-header py-3">
-                <h4 className="m-0 font-weight-bold text-primary">{ this.props.group.name }</h4>
-                {/* <div className="member">メンバー</div> */}
-              </div>
-              <div className="card-body">
-                <Calendar 
-                  handlePrevCalendar={this.handlePrevCalendar}
-                  handleNextCalendar={this.handleNextCalendar}
-                  handleFormDate={this.handleFormDate}
-                  // handleTaskData={this.handleTaskData}
-                  year={this.state.year}
-                  month={this.state.month}
-                  tasks={this.state.tasks}
-                />
-              </div>
+              <Calendar 
+                handlePrevCalendar={this.handlePrevCalendar}
+                handleNextCalendar={this.handleNextCalendar}
+                handleFormDate={this.handleFormDate}
+                // handleTaskData={this.handleTaskData}
+                year={this.state.year}
+                month={this.state.month}
+                tasks={this.state.tasks}
+              />
             </div>
 
             <div className="task-bar">
