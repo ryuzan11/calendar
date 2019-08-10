@@ -7,7 +7,7 @@ class Tasks extends React.Component{
       <React.Fragment>
         <div className="tasks">
           {this.props.tasks.map( task => {
-            if ( this.props.task_date == task.task_date ){
+            if ( this.props.task_date == task.task_date && task.user_id == this.props.user.id){
               return (
                 <Task task={task} key={task.id} />
               )

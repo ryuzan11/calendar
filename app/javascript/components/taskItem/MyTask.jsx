@@ -19,7 +19,7 @@ class MyTask extends React.Component {
         // onUserInput={this.handleUserInput}
         onFormSubmit={this.props.handleFormSubmit}
       />
-      <Tasks tasks={this.props.tasks} task_date={this.props.task_date} />
+      <Tasks tasks={this.props.tasks} task_date={this.props.task_date} user={this.props.user} />
     </div>
     )
   }
