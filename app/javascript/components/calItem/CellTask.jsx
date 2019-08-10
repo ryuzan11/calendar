@@ -7,7 +7,7 @@ class CellTask extends React.Component {
     let length = []
     
     this.props.tasks.map( task => {
-      if( ymd == task.task_date ){
+      if( ymd == task.task_date && task.user_id == this.props.user.id ){
         length.push(<Cell 
                       ymd={ymd} 
                       task={task} 

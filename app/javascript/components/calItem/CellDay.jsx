@@ -34,7 +34,8 @@ class CellDay extends React.Component{
                 <div id={ymd} >{prevDay}</div>
                 <CellTask  
                   ymd={ymd} 
-                  tasks={this.props.tasks} 
+                  tasks={this.props.tasks}
+                  user={this.props.user}
                   // handleTaskData={this.props.handleTaskData}
                    />
             </div>)
@@ -52,7 +53,8 @@ class CellDay extends React.Component{
                 <div id={ymd} >{nextDay}</div>
                 <CellTask  
                   ymd={ymd} 
-                  tasks={this.props.tasks} 
+                  tasks={this.props.tasks}
+                  user={this.props.user}
                   // handleTaskData={this.props.handleTaskData}
                    />
                 </div>)
@@ -69,7 +71,8 @@ class CellDay extends React.Component{
                 <div id={ymd} >{dayCount}</div>
                 <CellTask  
                   ymd={ymd} 
-                  tasks={this.props.tasks} 
+                  tasks={this.props.tasks}
+                  user={this.props.user}
                   // handleTaskData={this.props.handleTaskData}
                    />
               </div>)

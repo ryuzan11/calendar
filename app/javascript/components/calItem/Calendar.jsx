@@ -31,6 +31,7 @@ class Calendar extends React.Component {
               month={this.props.month}
               tasks={this.props.tasks}
               onTaskDate={this.props.handleFormDate}
+              user={this.props.user}
               // handleTaskData={this.props.handleTaskData}
             />
           </div>

@@ -100,6 +100,7 @@ class CalendarTask extends React.Component{
                 year={this.state.year}
                 month={this.state.month}
                 tasks={this.state.tasks}
+                user={this.props.user}
               />
             </div>
           </div>
