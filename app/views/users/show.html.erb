@@ -37,6 +37,10 @@
           <div class="card-footer">
             <%= link_to "詳細", group_tasks_path(group.id), class:"btn btn-primary" %>
           </div>
+          <% if current_user.id == @user.id %>
+            <button data-modal="delete-item<%= group.id %>" data-open="modal" class="btn btn-outline-danger">削除</button>
+              <%= render "share/delete_modal", group: group %>
+          <% end %>
         </div>
       </div>
     <% end %>
