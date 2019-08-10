@@ -10,7 +10,6 @@ class MyTask extends React.Component {
   render () {
     return(
       <div className="my-task">
-      <div className="mytask-title">MYタスク</div>
       <TaskForm
         user={this.props.user}
         task_date={this.props.task_date}

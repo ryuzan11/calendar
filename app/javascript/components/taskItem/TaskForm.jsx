@@ -31,17 +31,23 @@ import React from "react"
     return(
       <div className="data-submit">
         <form 
-        onSubmit={(e) => this.handleSubmit(e)} 
+          className="form-horizontal"
+          onSubmit={(e) => this.handleSubmit(e)} 
         >
-          <label>
-            日付
-            <input
-              name="task_date"
-              type="date"
-              value={this.props.task_date}
-              // onChange={this.handleInputChange}
-               />
-          </label><br />
+          <div className="form-group">
+            <label className="col-sm-3 control-label task">
+              日付
+            </label>
+            <div className="col-sm-7">
+              <input
+                className="form-control"
+                name="task_date"
+                type="date"
+                value={this.props.task_date}
+                // onChange={this.handleInputChange}
+              />
+            </div>
+          </div>
           {/* 達成
           <label>
             <input
@@ -50,16 +56,21 @@ import React from "react"
               value={this.props.comp}
               onChange={this.handleInputChange} />
           </label><br /> */}
-          <label>
-            タスク
-            <textarea
-              name="title"
-              rows="1"
-              placeholder="タスク記入"
-              // value={this.props.title}
-              // onChange={this.handleInputChange}
-            />
-          </label><br />
+          <div className="form-group">
+            <label className="col-sm-3 control-label task">
+              タスク
+            </label>
+            <div className="col-sm-9">
+              <textarea
+                className="form-control"
+                name="title"
+                rows="1"
+                placeholder="タスク記入"
+                // value={this.props.title}
+                // onChange={this.handleInputChange}
+              />
+            </div>
+          </div>
           {/* <label>
             開始時間
             <input
@@ -84,7 +95,11 @@ import React from "react"
             type='hidden' 
             name='user_id' 
             value={this.props.user.id} />
-          <input type="submit" value="登録" />
+          <div className="form-group">
+            <div className="text-center">
+              <input type="submit" value="登録" className="btn btn-outline-light" />
+            </div>
+          </div>
         </form><br />
       </div>
     );
