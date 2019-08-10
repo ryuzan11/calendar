@@ -6,8 +6,7 @@
     <h1 class="display-3">ユーザー情報</h1>
     <table>
       <thead>
-        <tr><%= "ニックネーム：" + @user.nickname  %></tr><br>
-        <tr><%= "メールアドレス：" + @user.email  %></tr>
+        <br/><tr><h5 class="desplay-3"><%= "ニックネーム：" + @user.nickname  %></h4></tr>
       </thead>
     </table><br/>
     <% if current_user.id == @user.id %>
@@ -34,12 +33,12 @@
                 </tr>
             </table>
           </div>
-          <div class="card-footer">
-            <%= link_to "詳細", group_tasks_path(group.id), class:"btn btn-primary" %>
-          </div>
-          <% if current_user.id == @user.id %>
-            <button data-modal="delete-item<%= group.id %>" data-open="modal" class="btn btn-outline-danger">削除</button>
-              <%= render "share/delete_modal", group: group %>
+          <% group.users.each do |user| %>
+            <% if current_user.id == user.id %>
+              <div class="card-footer">
+                <%= react_component( "GroupBtn", props={group: group} )%>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
