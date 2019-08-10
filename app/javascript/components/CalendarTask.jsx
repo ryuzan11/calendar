@@ -15,13 +15,18 @@ class CalendarTask extends React.Component{
   }
 
   componentDidMount = () =>{
-  const date = new Date();
-  let year = date.getFullYear()
-  let month = date.getMonth() + 1
-  this.setState({
-    task_date: date,
-    year: year,
-    month: month
+    const date = new Date();
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+
+    let thisMonth = ("0"+month).slice(-2)
+    let day = date.getDate()
+    let task_date = year + "-" + thisMonth + "-" + day
+    
+    this.setState({
+      task_date: task_date,
+      year: year,
+      month: month
     })
   }
 
@@ -84,10 +89,9 @@ class CalendarTask extends React.Component{
     return(
       <React.Fragment>
         <div className="container-fluid box">
-          <h1 className="h3 mb-2 text-gray-800">{ this.props.group.name }</h1>
           {/* <div className="member">メンバー</div> */}
-          <div className="cards shadow mb-4" >
-            <div className="calendar-bar">
+          <div className="calendar-bar">
+            <div className="col-calendar">
               <Calendar 
                 handlePrevCalendar={this.handlePrevCalendar}
                 handleNextCalendar={this.handleNextCalendar}
@@ -98,20 +102,19 @@ class CalendarTask extends React.Component{
                 tasks={this.state.tasks}
               />
             </div>
-
-            <div className="task-bar">
-              <h2>タスク登録</h2>
-              <TaskBar 
-                tasks={this.state.tasks}
-                group={this.props.group}
-                user={this.props.user}
-                task_date={this.state.task_date}
-                title={this.state.title}
-                authenticity_token={this.props.authenticity_token} 
-                handleFormSubmit={this.handleFormSubmit}
-              />
-            </div>
           </div>
+
+          <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion task-bar">
+            <TaskBar 
+              tasks={this.state.tasks}
+              group={this.props.group}
+              user={this.props.user}
+              task_date={this.state.task_date}
+              title={this.state.title}
+              authenticity_token={this.props.authenticity_token} 
+              handleFormSubmit={this.handleFormSubmit}
+            />
+          </ul>
         </div>
       </React.Fragment>
     )
