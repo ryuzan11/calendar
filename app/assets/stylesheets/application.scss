@@ -16,9 +16,9 @@
 @import "./grayscale/grayscale.scss";
 @import "./admin2/sb-admin-2.scss";
 
-@import "overwrite.scss";
 @import "calendar.scss";
 @import "profile.scss";
 @import "task.scss";
 @import "task-bar.scss";
-@import "task-delete.scss";
+@import "delete-modal.scss";
+@import "overwrite.scss";
