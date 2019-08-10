@@ -1,5 +1,5 @@
 import React from "react";
-import TaskDelete from "./TaskDelete";
+import DeleteModal from "../share/DeleteModal";
 
 class Task extends React.Component {
   constructor(props){
@@ -33,9 +33,9 @@ class Task extends React.Component {
                 // onClick={this.handleClickTask} 
         >
         </button>
-        <TaskDelete task={this.props.task} 
-                    show={this.state.show}
-                    handleClose={this.hideModal} />
+        <DeleteModal task={this.props.task} 
+                     show={this.state.show}
+                     handleClose={this.hideModal} />
       </div>
     )
   };

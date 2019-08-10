@@ -14,5 +14,24 @@ body{
 
 .container-fluid.box{
   display: block;
+  padding: 0;
 }
 
+div.card-footer{
+ margin: 5px;
+}
+
+.btn.btn-danger.group{
+ margin: 5px;
+}
+
+.btn.btn-primary.group{
+  margin: 5px;
+}
+
+.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion.task-bar{
+  display: table-cell;
+  background-color: #007bff;
+  background-image: linear-gradient(180deg, #007bff 10%, #0056b3 100%);
+  width: 100% !important;
+}

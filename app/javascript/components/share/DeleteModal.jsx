@@ -1,8 +1,31 @@
 import React from "react";
 
-class TaskDelete extends React.Component {
+class DeleteModal extends React.Component {
+
   render(){
+
     let showHideClassName = this.props.show ? "modal is-show is-animate" : "modal";
+
+    let DeleteData = () => {
+      if( this.props.group == null ){
+        return(
+          <a className="modal-btn modal-btn-submit" 
+            rel="nofollow" 
+            data-method="delete" 
+            href={"/groups/" + this.props.task.group_id + "/tasks/" + this.props.task.id}>
+            削除する
+          </a> )
+      } else if( this.props.task == null  ){
+        return(
+          <a className="modal-btn modal-btn-submit" 
+            rel="nofollow" 
+            data-method="delete" 
+            href={"/groups/" + this.props.group.id }>
+            削除する
+          </a> )
+      }
+    }
+
     return(
       <aside id="delete" className={showHideClassName}>
         <div className="modal-inner modal-banner">
@@ -16,12 +39,7 @@ class TaskDelete extends React.Component {
                     >
                     キャンセル
             </button>
-            <a className="modal-btn modal-btn-submit" 
-               rel="nofollow" 
-               data-method="delete" 
-               href={"/groups/" + this.props.task.group_id + "/tasks/" + this.props.task.id}>
-              削除する
-            </a>
+            <DeleteData />
           </div>
         </div>
       </aside>
@@ -29,4 +47,4 @@ class TaskDelete extends React.Component {
   };
 };
 
-export default TaskDelete
+export default DeleteModal

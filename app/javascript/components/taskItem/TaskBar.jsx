@@ -15,6 +15,7 @@ class TaskBar extends React.Component {
             authenticity_token={this.props.authenticity_token} 
             handleFormSubmit={this.props.handleFormSubmit}
           />
+          <hr className="sidebar-divider my-0"></hr>
           <div className="other-task">
             <h2>他ユーザー(未実装)</h2>
             <div className="tab">

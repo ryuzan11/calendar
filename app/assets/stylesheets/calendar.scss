@@ -1,12 +1,19 @@
 div.calendar-bar{
   display: table-cell;
-  width: 740px;
+  width: 800px;
+  margin: 10px;
+  .col-calendar{
+    margin: 30px 50px 20px;
+    padding: 0 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
   .year-month{
     text-align: center;
     width: 100%;
     .calendar-title{
       font-size: 2rem;
       vertical-align: middle;
+      margin: 0 50px;
     }
   }
   .calendar{
