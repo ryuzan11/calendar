@@ -16,23 +16,36 @@ class TaskBar extends React.Component {
             handleFormSubmit={this.props.handleFormSubmit}
           />
           <hr className="sidebar-divider my-0"></hr>
+
           <div className="other-task">
-            <h2>他ユーザー(未実装)</h2>
-            <div className="tab">
-              <ul className="users-tab">
-                <li className="user-tab active">①active user</li>
-                <li className="user-tab">②disabled user</li>
+            <div className="row nav">
+              <ul className="nav nav-tabs">
+                <li className="nav-item show">
+                  <div class="nav-link">
+                    ①active user
+                  </div>
+                </li>
+                <li className="nav-item">
+                  <div class="nav-link">
+                    ②disabled user
+                  </div>
+                </li>
               </ul>
             </div>
-            <div className="tasks user active">①active user
-              <div className="task">タスク１</div>
-              <div className="task">タスク２</div>
-            </div>
-            <div className="tasks user">②disabled user
-              <div className="task">タスク１</div>
-              <div className="task">タスク２</div>
+            <div class="row tab">
+              <div class="tab-content">
+                <div class="tab-pane active" id="renthouses-list">
+                  <div className="task">タスク１</div>
+                  <div className="task">タスク２</div>
+                </div>
+                <div class="tab-pane" id="renthouses-list">
+                  <div className="task">タスク１</div>
+                  <div className="task">タスク２</div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </React.Fragment>
     );
