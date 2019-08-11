@@ -5,7 +5,7 @@ class Tasks extends React.Component{
   render(){
     return(
       <React.Fragment>
-        <div className="tasks">
+        <ul className="list-group">
           {this.props.tasks.map( task => {
             if ( this.props.task_date == task.task_date && task.user_id == this.props.user.id){
               return (
@@ -13,7 +13,7 @@ class Tasks extends React.Component{
               )
             }})
           }
-        </div>
+        </ul>
       </React.Fragment>
     )
   }

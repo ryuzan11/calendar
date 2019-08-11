@@ -100,7 +100,7 @@ import React from "react"
               <input type="submit" value="登録" className="btn btn-outline-light" />
             </div>
           </div>
-        </form><br />
+        </form>
       </div>
     );
   };

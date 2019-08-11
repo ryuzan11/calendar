@@ -1,8 +1,6 @@
-
 div.mytask-title{
   font-size: 40px; 
 }
-
 
 div.tab{
   ul{
@@ -14,5 +12,18 @@ div.tab{
 
 .col-sm-3.control-label.task{
   color: #fff;
-  // font-weight: 700;
+}
+
+
+
+.list-group-item.col-sm-11.task{
+  padding: 0;
+  margin: auto;
+  margin-bottom: 10px;
+  .list-group-item.task{
+    padding: 0 5px;
+    .created-date.small{
+      font-size: small;
+    }
+  }
 }
