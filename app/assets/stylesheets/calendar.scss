@@ -52,7 +52,11 @@ div.calendar-bar{
         background-color: #b3abab;
       }
       .task-cell{
-        background-color: beige;
+        text-align: center;
+        background-color: orange;
+        color: white;
+        border-radius: 10px;
+        font-size: 13px;
       }
     }
   }
