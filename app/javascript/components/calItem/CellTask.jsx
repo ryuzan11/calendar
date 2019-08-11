@@ -13,7 +13,7 @@ class CellTask extends React.Component {
                       task={task} 
                       key={task.id} 
                       // onTaskData={this.props.handleTaskData}
-                       />)
+                   />)
       }
     })
 
@@ -22,6 +22,7 @@ class CellTask extends React.Component {
         {length[0]}
         {length[1]}
         {length[2]}
+        {length[3]}
       </React.Fragment>
     )
   }
