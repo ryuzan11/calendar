@@ -14,16 +14,19 @@ div.tab{
   color: #fff;
 }
 
-
-
 .list-group-item.col-sm-11.task{
   padding: 0;
   margin: auto;
   margin-bottom: 10px;
   .list-group-item.task{
+    display: table;
     padding: 0 5px;
-    .created-date.small{
-      font-size: small;
-    }
+    width: 100%;
+  }
+  .created-date.small{
+    font-size: small;
+    display: table-cell;
+    text-align: right;
+    padding: 0 10px 0 0;
   }
 }
