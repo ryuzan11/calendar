@@ -36,10 +36,9 @@ class Task extends React.Component {
 
     return(
       <li className="list-group-item col-sm-11 task">
-        <ul className="list-group-item task"
+        <div className="list-group-item task"
              id={this.props.task.id + " " + this.props.task.task_date}>
           <span>{this.props.task.title + "　"}</span>
-
           <span className="far fa-trash-alt"
               onClick={this.showModal}
               // onClick={this.handleClickTask} 
@@ -48,10 +47,10 @@ class Task extends React.Component {
           <span className="created-date small">
             { created_date }
           </span>
-          </ul>
-        <DeleteModal task={this.props.task} 
-                     show={this.state.show}
-                     handleClose={this.hideModal} />
+          <DeleteModal task={this.props.task} 
+                      show={this.state.show}
+                      handleClose={this.hideModal} />
+        </div>
       </li>
     )
   };

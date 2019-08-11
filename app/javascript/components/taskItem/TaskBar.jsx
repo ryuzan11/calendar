@@ -21,24 +21,24 @@ class TaskBar extends React.Component {
             <div className="row nav">
               <ul className="nav nav-tabs">
                 <li className="nav-item show">
-                  <div class="nav-link">
+                  <div className="nav-link">
                     ①active user
                   </div>
                 </li>
                 <li className="nav-item">
-                  <div class="nav-link">
+                  <div className="nav-link">
                     ②disabled user
                   </div>
                 </li>
               </ul>
             </div>
-            <div class="row tab">
-              <div class="tab-content">
-                <div class="tab-pane active" id="renthouses-list">
+            <div className="row tab">
+              <div className="tab-content">
+                <div className="tab-pane active" id="renthouses-list">
                   <div className="task">タスク１</div>
                   <div className="task">タスク２</div>
                 </div>
-                <div class="tab-pane" id="renthouses-list">
+                <div className="tab-pane" id="renthouses-list">
                   <div className="task">タスク１</div>
                   <div className="task">タスク２</div>
                 </div>
