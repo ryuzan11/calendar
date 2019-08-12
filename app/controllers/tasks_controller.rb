@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.where(group_id: params[:group_id]).order('task_start ASC')
     @groups = current_user.groups
-    @other_users = @group.group_users.where.not(user_id: current_user)
+    @other_users = @group.users.where.not(id: current_user)
     @other_tasks = @tasks.where.not(user_id: current_user)
     respond_to do |format|
       format.html
