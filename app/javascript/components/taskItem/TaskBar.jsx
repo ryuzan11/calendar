@@ -1,5 +1,6 @@
 import React from "react";
 import MyTask from "./MyTask";
+import OtherTask from "./OtherTask"
 
 class TaskBar extends React.Component {
   render(){
@@ -16,36 +17,10 @@ class TaskBar extends React.Component {
             handleFormSubmit={this.props.handleFormSubmit}
           />
           <hr className="sidebar-divider my-0"></hr>
-
-          <div className="other-task">
-            <div className="row nav">
-              <ul className="nav nav-tabs">
-                <li className="nav-item show">
-                  <div className="nav-link">
-                    ①active user
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <div className="nav-link">
-                    ②disabled user
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="row tab">
-              <div className="tab-content">
-                <div className="tab-pane active" id="renthouses-list">
-                  <div className="task">タスク１</div>
-                  <div className="task">タスク２</div>
-                </div>
-                <div className="tab-pane" id="renthouses-list">
-                  <div className="task">タスク１</div>
-                  <div className="task">タスク２</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <OtherTask
+            other_users={this.props.other_users}
+            other_tasks={this.props.other_tasks}
+          />
         </div>
       </React.Fragment>
     );

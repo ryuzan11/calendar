@@ -110,6 +110,8 @@ class CalendarTask extends React.Component{
               tasks={this.state.tasks}
               group={this.props.group}
               user={this.props.user}
+              other_users={this.props.other_users}
+              other_tasks={this.props.other_tasks}
               task_date={this.state.task_date}
               title={this.state.title}
               authenticity_token={this.props.authenticity_token} 
