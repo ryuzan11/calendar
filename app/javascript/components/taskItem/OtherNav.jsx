@@ -5,12 +5,12 @@ class OtherNav extends React.Component{
     console.log(this.props.other_users)
     return(
       <React.Fragment>
-        <div className="row nav">
+        <div className="row nav task">
           <ul className="nav nav-tabs task">
             {this.props.other_users.map( (other_user, index) => {
               if ( index == 0 ){
                 return (
-                  <li className="nav-item show">
+                  <li className="nav-item active">
                     <div className="nav-link task" key={index}>
                       {other_user.nickname}
                     </div>
