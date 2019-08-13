@@ -6,10 +6,17 @@
   color: #EEEEEE;
 }
 
+.card-body.pad{
+  padding: 0.5rem;
+}
+
 div.member{
   text-align: left !important;
 }
 
 .member-table{
-  width: 213px;
+ tr{
+  display: flex;
+  flex-wrap: wrap;
+ }
 }
