@@ -1,9 +1,24 @@
 import React from "react"
 
 class TaskForm extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      comp: "false",
+      comp_checked: "false"
+    }
+  }
+
+  handleCheck = (e) => {
+    let target = e.target;
+    let value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({
+      comp: value,
+    });
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.comp)
     let task = {
       task_date: e.target.task_date.value, 
       title: e.target.title.value,
@@ -14,7 +29,11 @@ class TaskForm extends React.Component{
      }
     this.props.onFormSubmit(task);
     e.target.title.value = '';
-    e.target.comp.value = '';
+    e.target.comp.checked = false;
+    this.setState({
+      comp: "false",
+      comp_checked: "false"
+    });
   };
 
   render(){
@@ -58,7 +77,8 @@ class TaskForm extends React.Component{
             <input
               name="comp"
               type="checkbox"
-              value=""
+              value={this.state.comp}
+              onClick={this.handleCheck}
             />
           </div>
           {/* <label>
