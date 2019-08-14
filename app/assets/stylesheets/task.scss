@@ -10,13 +10,14 @@ div.tab{
   }
 }
 
-.col-sm-3.control-label.task{
+.control-label.task{
   color: #fff;
+  margin-bottom: 0;
 }
 
 .list-group-item.col-sm-11.task{
   padding: 0;
-  margin: auto;
+  margin: 0 auto 1rem;
   margin-bottom: 10px;
   .list-group-item.task{
     display: table;
