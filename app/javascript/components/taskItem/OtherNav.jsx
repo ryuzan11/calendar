@@ -1,6 +1,11 @@
 import React from "react";
 
 class OtherNav extends React.Component{
+
+  handleData = (e) => {
+    console.log(e.target.id)
+  }
+
   render(){
     console.log(this.props.other_users)
     return(
@@ -11,7 +16,7 @@ class OtherNav extends React.Component{
               if ( index == 0 ){
                 return (
                   <li className="nav-item active">
-                    <div className="nav-link task" key={index}>
+                    <div className="nav-link task" key={index} id={"nav-" + index} onClick={this.handleData}>
                       {other_user.nickname}
                     </div>
                   </li>
@@ -19,7 +24,7 @@ class OtherNav extends React.Component{
               } else {
                 return (
                   <li className="nav-item">
-                    <div className="nav-link task" key={index}>
+                    <div className="nav-link task" key={index} id={"nav-" + index} onClick={this.handleData}>
                       {other_user.nickname}
                     </div>
                   </li>
