@@ -1,30 +1,20 @@
 import React from "react"
 
-  class TaskForm extends React.Component{
-
-  // handleInputChange = (e) =>  {
-  //   const value = e.target.value;
-  //   const name = e.target.name;
-  //   let obj = {};
-  //   obj[name] = value;
-  //   // this.setState(obj);
-  //   this.props.onUserInput(obj)
-  // };
-
+class TaskForm extends React.Component{
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log(e.target.comp)
     let task = {
       task_date: e.target.task_date.value, 
       title: e.target.title.value,
-      // comp :e.target.comp.value, 
+      comp :e.target.comp.value, 
       // task_start :e.target.task_start.value,
       // task_end :e.target.task_end.value,
       user_id: e.target.user_id.value
      }
     this.props.onFormSubmit(task);
     e.target.title.value = '';
-    // e.target.task_date.value = '';
-    // this.setState({task_date: ''})
+    e.target.comp.value = '';
   };
 
   render(){
@@ -44,18 +34,9 @@ import React from "react"
                 name="task_date"
                 type="date"
                 value={this.props.task_date}
-                // onChange={this.handleInputChange}
               />
             </div>
           </div>
-          {/* 達成
-          <label>
-            <input
-              name="comp"
-              type="checkbox"
-              value={this.props.comp}
-              onChange={this.handleInputChange} />
-          </label><br /> */}
           <div className="form-group">
             <label className="col-sm-3 control-label task">
               タスク
@@ -67,25 +48,32 @@ import React from "react"
                 rows="1"
                 placeholder="タスク記入"
                 // value={this.props.title}
-                // onChange={this.handleInputChange}
               />
             </div>
+          </div>
+          <div className="form-group">
+            <label className="col-sm-2 control-label task">
+              達成
+            </label>
+            <input
+              name="comp"
+              type="checkbox"
+              value=""
+            />
           </div>
           {/* <label>
             開始時間
             <input
               name="task_start"
               type="time"
-              value={this.props.task_start}
-              onChange={this.handleInputChange} />
+              value={this.props.task_start}/>
           </label><br /> */}
           {/* <label>
             終了時間
             <input
               name="task_end"
               type="time"
-              value={this.props.task_end}
-              onChange={this.handleInputChange} />
+              value={this.props.task_end}/>
           </label><br /> */}
           <input 
             type='hidden' 

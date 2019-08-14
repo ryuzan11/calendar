@@ -79,7 +79,6 @@ class CalendarTask extends React.Component{
       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
       }).done(function(tasks){
         this.setState({tasks: tasks})}.bind(this)
-        // this.state.tasks.push(tasks: task)}.bind(this)
       ).fail(function(_xhr, status, err) {
         console.error(this.state.url, status, err.toString())}.bind(this)
     );
