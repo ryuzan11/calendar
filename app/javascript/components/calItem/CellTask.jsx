@@ -7,13 +7,20 @@ class CellTask extends React.Component {
     let length = []
     
     this.props.tasks.map( task => {
-      if( ymd == task.task_date && task.user_id == this.props.user.id ){
+      if( ymd == task.task_date && task.user_id == this.props.user.id && task.comp == false ){
         length.push(<Cell 
                       ymd={ymd} 
                       task={task} 
+                      task_cell=" task-cell"
                       key={task.id} 
-                      // onTaskData={this.props.handleTaskData}
                    />)
+      } else if ( ymd == task.task_date && task.user_id == this.props.user.id && task.comp == true ) {
+        length.push(<Cell 
+                      ymd={ymd} 
+                      task={task} 
+                      task_cell=" task-cell comp"
+                      key={task.id} 
+                  />)
       }
     })
 
