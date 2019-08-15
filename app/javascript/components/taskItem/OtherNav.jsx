@@ -1,31 +1,27 @@
 import React from "react";
 
 class OtherNav extends React.Component{
-
-  handleData = (e) => {
-    console.log(e.target.id)
-  }
-
   render(){
-    console.log(this.props.other_users)
     return(
       <React.Fragment>
         <div className="row nav task">
           <ul className="nav nav-tabs task">
-            {this.props.other_users.map( (other_user, index) => {
+            {this.props.other_users.map( (user, index) => {
               if ( index == 0 ){
+                let activeClass = (this.props.active == index ? "nav-item active" : "nav-item")
                 return (
-                  <li className="nav-item active">
-                    <div className="nav-link task" key={index} id={"nav-" + index} onClick={this.handleData}>
-                      {other_user.nickname}
+                  <li className={activeClass} key={index} >
+                    <div className="nav-link task" id={"nav-" + index} onClick={this.props.selectedIndex}>
+                      {user.nickname}
                     </div>
                   </li>
                 )
               } else {
+                let activeClass = (this.props.active == index ? "nav-item active" : "nav-item")
                 return (
-                  <li className="nav-item">
-                    <div className="nav-link task" key={index} id={"nav-" + index} onClick={this.handleData}>
-                      {other_user.nickname}
+                  <li className={activeClass}  key={index}>
+                    <div className="nav-link task" id={"nav-" + index} onClick={this.props.selectedIndex}>
+                      {user.nickname}
                     </div>
                   </li>
                 )

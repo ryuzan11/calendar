@@ -6,14 +6,49 @@ class OtherTab extends React.Component{
       <React.Fragment>
         <div className="row tab task">
           <div className="tab-content">
-            <div className="tab-pane active" id="renthouses-list">
-              <div className="task">タスク１</div>
-              <div className="task">タスク２</div>
-            </div>
-            <div className="tab-pane" id="renthouses-list">
-              <div className="task">タスク１</div>
-              <div className="task">タスク２</div>
-            </div>
+            {this.props.other_users.map( (user, index) => {
+              if ( index == 0 ){
+                let activeClass = (this.props.active == index ? "tab-pane active" : "tab-pane")
+                return (
+                  <ul className={activeClass} key={index} id={"tab-" + index}>
+                    {this.props.other_tasks.map( (task, index) => {
+                      if ( user.id == task.user_id ){
+                        return(
+                          <div className="othertask" key={index} id={"tabtask-" + task.id} >
+                            <input
+                              name="comp"
+                              type="checkbox"
+                              checked = {task.comp}
+                            />
+                            <span>{task.title + "　"}</span>
+                          </div>
+                        )
+                      }
+                    })}
+                  </ul>
+                )
+              } else {
+                let activeClass = (this.props.active == index ? "tab-pane active" : "tab-pane")
+                return (
+                  <ul className={activeClass} key={index} id={"tab-" + index}>
+                    {this.props.other_tasks.map( (task, index) => {
+                      if ( user.id == task.user_id ){
+                        return(
+                          <div className="othertask" key={index} id={"tabtask-" + task.id}>
+                            <input
+                              name="comp"
+                              type="checkbox"
+                              checked = {task.comp}
+                            />
+                            <span>{task.title + "　"}</span>
+                          </div>
+                        )
+                      }
+                    })}
+                  </ul>
+                )
+              }
+            })}
           </div>
         </div>
 
