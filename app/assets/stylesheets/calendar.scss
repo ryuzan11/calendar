@@ -53,7 +53,14 @@ div.calendar-bar{
       }
       .task-cell{
         text-align: center;
-        background-color: orange;
+        background-color: violet;
+        color: white;
+        border-radius: 10px;
+        font-size: 13px;
+      }
+      .task-cell.comp{
+        text-align: center;
+        background-color: brown;
         color: white;
         border-radius: 10px;
         font-size: 13px;
