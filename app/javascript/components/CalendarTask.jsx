@@ -60,6 +60,21 @@ class CalendarTask extends React.Component{
     this.setState({task_date: task_date})
   }
 
+  handleCheckMyTask = (task_comp) => {
+    let url = "/groups/" + this.props.group.id + "/tasks/" + task_comp.task_id
+    $.ajax({
+      url: url,
+      datatype: 'json',
+      type: 'PATCH',
+      data: task_comp,
+      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
+      }).done(function(tasks){
+        this.setState({tasks: tasks})}.bind(this)
+      ).fail(function(_xhr, status, err) {
+        console.error(this.state.url, status, err.toString())}.bind(this)
+    );
+  }
+
   handleFormSubmit = (task) => {
     let url = "/groups/" + this.props.group.id + "/tasks"
     $.ajax({
@@ -105,6 +120,7 @@ class CalendarTask extends React.Component{
               title={this.state.title}
               authenticity_token={this.props.authenticity_token} 
               handleFormSubmit={this.handleFormSubmit}
+              handleCheckMyTask={this.handleCheckMyTask}
             />
           </ul>
         </div>
