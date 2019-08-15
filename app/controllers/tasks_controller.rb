@@ -22,6 +22,16 @@ class TasksController < ApplicationController
     end
   end
 
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      @tasks = Task.where(group_id: params[:group_id]) #indexでインスタンス変数定義してるから必要ない？
+      render json: @tasks, status: :created
+    else
+      render json: @task.errors, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     task = Task.find(params[:id])
     task.destroy

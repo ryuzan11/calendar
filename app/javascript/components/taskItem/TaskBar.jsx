@@ -15,6 +15,7 @@ class TaskBar extends React.Component {
             title={this.props.title}
             authenticity_token={this.props.authenticity_token} 
             handleFormSubmit={this.props.handleFormSubmit}
+            handleCheckMyTask={this.props.handleCheckMyTask}
           />
           <hr className="sidebar-divider my-0"></hr>
           <OtherTask

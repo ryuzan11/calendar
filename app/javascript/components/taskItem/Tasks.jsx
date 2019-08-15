@@ -9,7 +9,7 @@ class Tasks extends React.Component{
           {this.props.tasks.map( task => {
             if ( this.props.task_date == task.task_date && task.user_id == this.props.user.id){
               return (
-                <Task task={task} key={task.id} />
+                <Task task={task} group={this.props.group} onCheckMyTask={this.props.handleCheckMyTask} key={task.id} />
               )
             }})
           }

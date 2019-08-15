@@ -6,8 +6,20 @@ class Task extends React.Component {
     super(props);
     this.state = {
       show: false,
+      comp: this.props.task.comp,
       comp_checked: this.props.task.comp
     }
+  }
+
+  compCheck = (e) => {
+    let target = e.target;
+    let value = target.type === 'checkbox' ? target.checked : target.value;
+    let task_comp = {comp: value, task_id: target.className }
+    this.props.onCheckMyTask(task_comp);
+    this.setState({
+      comp: value,
+      comp_checked: value
+    });
   }
 
   showModal = () => {
@@ -30,8 +42,11 @@ class Task extends React.Component {
              id={this.props.task.id + " " + this.props.task.task_date}>
           <input
             name="comp"
+            className = {this.props.task.id}
             type="checkbox"
+            value={this.state.comp}
             checked = {this.state.comp_checked}
+            onClick = {this.compCheck}
           />
           <span>{this.props.task.title + "　"}</span>
           <span className="far fa-trash-alt"

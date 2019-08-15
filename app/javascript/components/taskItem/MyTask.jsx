@@ -13,7 +13,13 @@ class MyTask extends React.Component {
         authenticity_token={this.props.authenticity_token}
         onFormSubmit={this.props.handleFormSubmit}
       />
-      <Tasks tasks={this.props.tasks} task_date={this.props.task_date} user={this.props.user} />
+      <Tasks 
+        tasks={this.props.tasks} 
+        task_date={this.props.task_date} 
+        user={this.props.user} 
+        group={this.props.group} 
+        handleCheckMyTask={this.props.handleCheckMyTask}
+      />
     </div>
     )
   }
