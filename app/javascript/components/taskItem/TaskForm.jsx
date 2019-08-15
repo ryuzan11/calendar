@@ -22,7 +22,7 @@ class TaskForm extends React.Component{
     let task = {
       task_date: e.target.task_date.value, 
       title: e.target.title.value,
-      comp :e.target.comp.value, 
+      comp: e.target.comp.value, 
       // task_start :e.target.task_start.value,
       // task_end :e.target.task_end.value,
       user_id: e.target.user_id.value
@@ -66,7 +66,6 @@ class TaskForm extends React.Component{
                 name="title"
                 rows="1"
                 placeholder="タスク記入"
-                // value={this.props.title}
               />
             </div>
           </div>
