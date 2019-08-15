@@ -60,15 +60,6 @@ class CalendarTask extends React.Component{
     this.setState({task_date: task_date})
   }
 
-  // handleTaskData = (click_task) => {
-  //   let task_date = click_task[1]
-  //   let title = click_task[2]
-  //   this.setState({
-  //     task_date: task_date,
-  //     title: title,
-  //   })
-  // }
-
   handleFormSubmit = (task) => {
     let url = "/groups/" + this.props.group.id + "/tasks"
     $.ajax({
@@ -95,7 +86,6 @@ class CalendarTask extends React.Component{
                 handlePrevCalendar={this.handlePrevCalendar}
                 handleNextCalendar={this.handleNextCalendar}
                 handleFormDate={this.handleFormDate}
-                // handleTaskData={this.handleTaskData}
                 year={this.state.year}
                 month={this.state.month}
                 tasks={this.state.tasks}

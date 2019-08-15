@@ -36,7 +36,6 @@ class CellDay extends React.Component{
                   ymd={ymd} 
                   tasks={this.props.tasks}
                   user={this.props.user}
-                  // handleTaskData={this.props.handleTaskData}
                    />
             </div>)
           } else if ( dayCount>endDay ) {
@@ -55,7 +54,6 @@ class CellDay extends React.Component{
                   ymd={ymd} 
                   tasks={this.props.tasks}
                   user={this.props.user}
-                  // handleTaskData={this.props.handleTaskData}
                    />
                 </div>)
             dayCount++
@@ -73,7 +71,6 @@ class CellDay extends React.Component{
                   ymd={ymd} 
                   tasks={this.props.tasks}
                   user={this.props.user}
-                  // handleTaskData={this.props.handleTaskData}
                    />
               </div>)
             dayCount++

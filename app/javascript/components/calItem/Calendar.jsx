@@ -4,13 +4,6 @@ import Youbi from "./Youbi"
 import CellDay from "./CellDay"
 
 class Calendar extends React.Component {
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     year: this.props.year,
-  //     month: this.props.month,
-  //   }
-  // }
 
   render () {
     return (
@@ -32,7 +25,6 @@ class Calendar extends React.Component {
               tasks={this.props.tasks}
               onTaskDate={this.props.handleFormDate}
               user={this.props.user}
-              // handleTaskData={this.props.handleTaskData}
             />
           </div>
         </div>

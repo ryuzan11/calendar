@@ -7,7 +7,6 @@ class TaskBar extends React.Component {
     return(
       <React.Fragment>
         <div className="task">
-          <h2>{this.props.user.nickname}</h2>
           <MyTask 
             tasks={this.props.tasks} 
             group={this.props.group} 
