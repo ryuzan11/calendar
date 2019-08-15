@@ -12,7 +12,7 @@ class OtherTab extends React.Component{
                 return (
                   <ul className={activeClass} key={index} id={"tab-" + index}>
                     {this.props.other_tasks.map( (task, index) => {
-                      if ( user.id == task.user_id ){
+                      if ( user.id == task.user_id  && task.task_date == this.props.task_date ){
                         return(
                           <div className="othertask" key={index} id={"tabtask-" + task.id} >
                             <input
@@ -32,7 +32,7 @@ class OtherTab extends React.Component{
                 return (
                   <ul className={activeClass} key={index} id={"tab-" + index}>
                     {this.props.other_tasks.map( (task, index) => {
-                      if ( user.id == task.user_id ){
+                      if ( user.id == task.user_id && task.task_date == this.props.task_date ){
                         return(
                           <div className="othertask" key={index} id={"tabtask-" + task.id}>
                             <input

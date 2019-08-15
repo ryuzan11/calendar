@@ -28,6 +28,7 @@ class OtherTask extends React.Component{
           />
           <OtherTab other_users={this.props.other_users}
                     other_tasks={this.props.other_tasks}
+                    task_date={this.props.task_date}
                     active={this.state.active}
           />
         </div>

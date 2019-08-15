@@ -19,6 +19,7 @@ class TaskBar extends React.Component {
           />
           <hr className="sidebar-divider my-0"></hr>
           <OtherTask
+            task_date={this.props.task_date}
             other_users={this.props.other_users}
             other_tasks={this.props.other_tasks}
           />
